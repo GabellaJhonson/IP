@@ -1,0 +1,15 @@
+import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class AirplaneTest extends TestCase {
+    @Test
+    public void testPredict() throws FileNotFoundException {
+        File test = new File("/Users/iisuos/IdeaProjects/Kolok with test/kolok_test/src/test/java/dataTest.txt");
+        DeviceCollector device = null;
+        device = new Airplane(test);
+        assertEquals(device.predict(), 0.2);
+    }
+}
